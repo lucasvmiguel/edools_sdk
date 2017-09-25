@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A simple sdk to access edools platform."
   s.authors     = ["Lucas Vieira"]
   s.email       = 'lucasvieira.dev@gmail.com'
-  s.files       = ["lib/edools_sdk.rb"]
+  s.files       = ["lib/edools_sdk.rb", "lib/edools_sdk/course.rb"]
   s.homepage    =
     'http://rubygems.org/gems/edools_sdk'
   s.license       = 'MIT'
