@@ -151,7 +151,7 @@ module EdoolsSdk
     def self.create!(props)
       response = HTTP
         .headers('Authorization' => "Token token=\"#{ENV['edools_token']}\"")
-        .post("https://core.myedools.info/api/courses", :json => props)
+        .post(COURSE_URL, :json => props)
 
       raise "invalid status code #{response.status}" if response.status != 201
 
@@ -168,7 +168,7 @@ module EdoolsSdk
     def self.create(props)
       response = HTTP
         .headers('Authorization' => "Token token=\"#{ENV['edools_token']}\"")
-        .post("https://core.myedools.info/api/courses", :json => props)
+        .post(COURSE_URL, :json => props)
 
       return response if "invalid status code #{response.status}" if response.status != 201
 
