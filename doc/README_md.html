@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Gemfile - RDoc Documentation</title>
+<title>README - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
@@ -51,6 +51,18 @@
   </div>
 
   
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-EdoolsSdk">EdoolsSdk</a>
+    <li><a href="#label-Install">Install</a>
+    <li><a href="#label-Getting+start">Getting start</a>
+    <li><a href="#label-Documentation">Documentation</a>
+    <li><a href="#label-License">License</a>
+  </ul>
+</div>
+
 
   <div id="project-metadata">
     <div id="fileindex-section" class="nav-section">
@@ -84,11 +96,37 @@
   </div>
 </nav>
 
-<main role="main" aria-label="Page Gemfile">
+<main role="main" aria-label="Page README.md">
 
-<p>source &#39;<a href="https://rubygems.org">rubygems.org</a>&#39;</p>
+<h1 id="label-EdoolsSdk"><a href="EdoolsSdk.html">EdoolsSdk</a><span><a href="#label-EdoolsSdk">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p># gem “rake” gem “http” gem “webmock”</p>
+<p><a href="https://travis-ci.org/lucasvmiguel/edools_sdk"><img
+src="https://travis-ci.org/lucasvmiguel/edools_sdk.svg?branch=master"></a></p>
+
+<p>This project is a SDK to Edools platform.</p>
+
+<h2 id="label-Install">Install<span><a href="#label-Install">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;edools_sdk&#39;</span>, <span class="ruby-identifier">git</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;https://github.com/lucasvmiguel/edools_sdk.git&#39;</span>
+</pre>
+
+<h2 id="label-Getting+start">Getting start<span><a href="#label-Getting+start">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>You need set an enviroment variable called &#39;edools_token&#39;, with a
+valid token, to work correctly with the edools platform!!!</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;edools_sdk&#39;</span>
+
+<span class="ruby-constant">EdoolsSdk</span><span class="ruby-operator">::</span><span class="ruby-constant">Course</span>.<span class="ruby-identifier">all</span>()
+</pre>
+
+<h2 id="label-Documentation">Documentation<span><a href="#label-Documentation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="doc">here</a></p>
+
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="LICENSE">MIT</a></p>
 </main>
 
 

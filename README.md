@@ -21,7 +21,7 @@ EdoolsSdk::Course.all()
 
 ## Documentation
 
-[here](doc)
+[here](https://lucasvmiguel.github.io/)
 
 ## License
 
