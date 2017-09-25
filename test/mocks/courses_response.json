@@ -1,0 +1,24 @@
+{
+  "courses": [
+    {
+      "id": 21530,
+      "name": "test 4",
+      "description": null,
+      "image_url": null,
+      "duration": null,
+      "ready": null,
+      "path_ids": [],
+      "forum_section_ids": [],
+      "linear_requirements": null,
+      "library_resource": {
+        "id": 1152227,
+        "library": {
+          "id": 572
+        },
+        "library_tags": [],
+        "school_products": []
+      },
+      "created_at": "2017-09-25T15:48:16.485Z",
+      "updated_at": "2017-09-25T15:48:16.485Z"
+    }]
+}

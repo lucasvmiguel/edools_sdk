@@ -165,7 +165,7 @@ module EdoolsSdk
     def save!(school_id)
       response = HTTP
         .headers('Authorization' => "Token token=\"#{ENV['edools_token']}\"")
-        .post("#{PRODUCT_URL}/#{school_id}/school_products", :json => self.to_h)
+        .post("#{PRODUCT_URL}#{school_id}/school_products", :json => self.to_h)
 
       raise "invalid status code #{response.status}" if response.status != 201
 
@@ -186,9 +186,9 @@ module EdoolsSdk
     def save(school_id)
       response = HTTP
         .headers('Authorization' => "Token token=\"#{ENV['edools_token']}\"")
-        .post("#{PRODUCT_URL}/#{school_id}/school_products", :json => self.to_h)
+        .post("#{PRODUCT_URL}#{school_id}/school_products", :json => self.to_h)
 
-      return response if "invalid status code #{response.status}" if response.status != 201
+      return response if response.status != 201
 
       body = response.parse(:json)
 
@@ -202,12 +202,12 @@ module EdoolsSdk
     # Create a product, if anything goes wrong an exception will be raised
     #
     # Example:
-    #   >> Product.create!(222, "name" => "test")
+    #   >> Product.create!(222, "title" => "test")
     #   => #<EdoolsSdk::Product:0x00000002bc4a88 @id=22395, @title="test product 1", @description=nil, @subtitle=nil, @logo=nil, @video_url=nil, @video_title=nil, @video_description=nil, @published=false, @hidden=false, @restricted=false, @certification=false, @classes_auto_generation=false, @certification_min_progress=nil, @meta_title=nil, @meta_description=nil, @meta_keys=nil, @available_time_type="indeterminate", @available_time_length=nil, @available_time_unit=nil, @expire_date=nil, @library_resource_id=nil, @max_attendance_type="indeterminate", @max_attendance_length=nil, @allowed_emails=[], @class_teacher_ids=nil, @category_ids=nil, @gallery_media_ids=nil, @created_at=#<Date: 2017-09-25 ((2458022j,0s,0n),+0s,2299161j)>, @updated_at=#<Date: 2017-09-25 ((2458022j,0s,0n),+0s,2299161j)>>
     def self.create!(school_id, props)
       response = HTTP
         .headers('Authorization' => "Token token=\"#{ENV['edools_token']}\"")
-        .post("#{PRODUCT_URL}/#{school_id}/school_products", :json => props)
+        .post("#{PRODUCT_URL}#{school_id}/school_products", :json => props)
 
       raise "invalid status code #{response.status}" if response.status != 201
 
@@ -219,14 +219,14 @@ module EdoolsSdk
     # Create a product
     #
     # Example:
-    #   >> Product.create(222, "name" => "test")
+    #   >> Product.create(222, "title" => "test")
     #   => #<EdoolsSdk::Product:0x00000002bc4a88 @id=22395, @title="test product 1", @description=nil, @subtitle=nil, @logo=nil, @video_url=nil, @video_title=nil, @video_description=nil, @published=false, @hidden=false, @restricted=false, @certification=false, @classes_auto_generation=false, @certification_min_progress=nil, @meta_title=nil, @meta_description=nil, @meta_keys=nil, @available_time_type="indeterminate", @available_time_length=nil, @available_time_unit=nil, @expire_date=nil, @library_resource_id=nil, @max_attendance_type="indeterminate", @max_attendance_length=nil, @allowed_emails=[], @class_teacher_ids=nil, @category_ids=nil, @gallery_media_ids=nil, @created_at=#<Date: 2017-09-25 ((2458022j,0s,0n),+0s,2299161j)>, @updated_at=#<Date: 2017-09-25 ((2458022j,0s,0n),+0s,2299161j)>>
     def self.create(school_id, props)
       response = HTTP
         .headers('Authorization' => "Token token=\"#{ENV['edools_token']}\"")
-        .post("#{PRODUCT_URL}/#{school_id}/school_products", :json => props)
+        .post("#{PRODUCT_URL}#{school_id}/school_products", :json => props)
 
-      return response if "invalid status code #{response.status}" if response.status != 201
+      return response if response.status != 201
 
       body = response.parse(:json)
 

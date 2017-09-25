@@ -66,4 +66,76 @@ class ProductTest < Minitest::Test
     assert_nil product.created_at
     assert_nil product.updated_at
   end
+
+  def test_all
+    stub_request(:get, "https://core.myedools.info/api/school_products").
+      with(headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 200, body: File.open("#{Dir.pwd}/test/mocks/products_response.json", 'rb'), headers: {})
+
+    response = EdoolsSdk::Product.all
+
+    assert_equal response.size, 1
+    assert_equal response.first.id, 22395
+    assert_equal response.first.title, "test product 1"
+  end
+
+  def test_all!
+    stub_request(:get, "https://core.myedools.info/api/school_products").
+      with(headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 200, body: File.open("#{Dir.pwd}/test/mocks/products_response.json", 'rb'), headers: {})
+
+    response = EdoolsSdk::Product.all
+
+    assert_equal response.size, 1
+    assert_equal response.first.id, 22395
+    assert_equal response.first.title, "test product 1"
+  end
+
+  def test_create
+    stub_request(:post, "https://core.myedools.info/api/schools/111/school_products").
+      with(body: "{\"title\":\"test\"}", headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Content-Type'=>'application/json; charset=UTF-8', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 201, body: "{\"id\":1,\"title\":\"test\"}", headers: {})
+
+    response = EdoolsSdk::Product.create(111, "title" => "test")
+
+    assert_equal response.id, 1
+    assert_equal response.title, "test"
+  end
+
+  def test_create!
+    stub_request(:post, "https://core.myedools.info/api/schools/111/school_products").
+      with(body: "{\"title\":\"test\"}", headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Content-Type'=>'application/json; charset=UTF-8', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 201, body: "{\"id\":1,\"title\":\"test\"}", headers: {})
+
+    response = EdoolsSdk::Product.create!(111, "title" => "test")
+
+    assert_equal response.id, 1
+    assert_equal response.title, "test"
+  end
+
+  def test_save
+    stub_request(:post, "https://core.myedools.info/api/schools/111/school_products").
+      with(body: "{\"id\":null,\"title\":\"test\",\"description\":null,\"subtitle\":null,\"logo\":null,\"video_url\":null,\"video_title\":null,\"video_description\":null,\"published\":null,\"hidden\":null,\"restricted\":null,\"certification\":null,\"classes_auto_generation\":null,\"certification_min_progress\":null,\"meta_title\":null,\"meta_description\":null,\"meta_keys\":null,\"available_time_type\":null,\"available_time_length\":null,\"available_time_unit\":null,\"expire_date\":null,\"library_resource_id\":null,\"max_attendance_type\":null,\"max_attendance_length\":null,\"allowed_emails\":null,\"class_teacher_ids\":null,\"category_ids\":null,\"gallery_media_ids\":null,\"created_at\":null,\"updated_at\":null}", headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Content-Type'=>'application/json; charset=UTF-8', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 201, body: "{\"id\":1,\"title\":\"test\"}", headers: {})
+
+    product = EdoolsSdk::Product.new
+    product.title = "test"
+    response = product.save(111)
+
+    assert_equal response.id, 1
+    assert_equal response.title, "test"
+  end
+
+  def test_save!
+    stub_request(:post, "https://core.myedools.info/api/schools/111/school_products").
+      with(body: "{\"id\":null,\"title\":\"test\",\"description\":null,\"subtitle\":null,\"logo\":null,\"video_url\":null,\"video_title\":null,\"video_description\":null,\"published\":null,\"hidden\":null,\"restricted\":null,\"certification\":null,\"classes_auto_generation\":null,\"certification_min_progress\":null,\"meta_title\":null,\"meta_description\":null,\"meta_keys\":null,\"available_time_type\":null,\"available_time_length\":null,\"available_time_unit\":null,\"expire_date\":null,\"library_resource_id\":null,\"max_attendance_type\":null,\"max_attendance_length\":null,\"allowed_emails\":null,\"class_teacher_ids\":null,\"category_ids\":null,\"gallery_media_ids\":null,\"created_at\":null,\"updated_at\":null}", headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Content-Type'=>'application/json; charset=UTF-8', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 201, body: "{\"id\":1,\"title\":\"test\"}", headers: {})
+
+    product = EdoolsSdk::Product.new
+    product.title = "test"
+    response = product.save!(111)
+
+    assert_equal response.id, 1
+    assert_equal response.title, "test"
+  end
 end

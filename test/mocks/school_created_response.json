@@ -1,0 +1,24 @@
+{
+  "school": {
+    "id": 572,
+    "subdomain": "lucasv",
+    "name": "lucasv"
+  },
+  "library": {
+    "id": 572
+  },
+  "organization": {
+    "id": 566,
+    "name": "lucasv"
+  },
+  "admin": {
+    "id": 588032,
+    "full_name": "lucasv ",
+    "email": "lucasvieira.dev@gmail.com",
+    "credentials": "foo",
+    "role_id": 8301
+  },
+  "forum": {
+    "id": 572
+  }
+}

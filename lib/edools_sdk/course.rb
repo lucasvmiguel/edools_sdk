@@ -132,7 +132,7 @@ module EdoolsSdk
         .headers('Authorization' => "Token token=\"#{ENV['edools_token']}\"")
         .post(COURSE_URL, :json => self.to_h)
 
-      return response if "invalid status code #{response.status}" if response.status != 201
+      return response if response.status != 201
 
       body = response.parse(:json)
 
@@ -170,7 +170,7 @@ module EdoolsSdk
         .headers('Authorization' => "Token token=\"#{ENV['edools_token']}\"")
         .post(COURSE_URL, :json => props)
 
-      return response if "invalid status code #{response.status}" if response.status != 201
+      return response if response.status != 201
 
       body = response.parse(:json)
 

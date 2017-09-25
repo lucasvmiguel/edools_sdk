@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
   s.files       = [
     "lib/edools_sdk.rb", 
     "lib/edools_sdk/course.rb", 
-    "lib/edools_sdk/product.rb"
+    "lib/edools_sdk/product.rb",
+    "lib/edools_sdk/school.rb",
   ]
   s.homepage    =
     'http://rubygems.org/gems/edools_sdk'

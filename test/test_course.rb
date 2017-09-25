@@ -1,5 +1,8 @@
 require 'minitest/autorun'
+require 'webmock/minitest'
 require 'edools_sdk'
+
+ENV["edools_token"] = "token_example"
 
 class CourseTest < Minitest::Test
   def test_to_h
@@ -47,5 +50,79 @@ class CourseTest < Minitest::Test
     assert_nil course.library_resource
     assert_nil course.created_at
     assert_nil course.updated_at
+  end
+
+  def test_all
+    stub_request(:get, "https://core.myedools.info/api/courses").
+      with(headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 200, body: File.open("#{Dir.pwd}/test/mocks/courses_response.json", 'rb'), headers: {})
+
+    response = EdoolsSdk::Course.all
+
+    assert_equal response.size, 1
+    assert_equal response.first.id, 21530
+    assert_equal response.first.name, "test 4"
+  end
+
+  def test_all!
+    stub_request(:get, "https://core.myedools.info/api/courses").
+      with(headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 200, body: File.open("#{Dir.pwd}/test/mocks/courses_response.json", 'rb'), headers: {})
+
+    response = EdoolsSdk::Course.all
+
+    assert_equal response.size, 1
+    assert_equal response.first.id, 21530
+    assert_equal response.first.name, "test 4"
+  end
+
+  def test_create
+    stub_request(:post, "https://core.myedools.info/api/courses").
+      with(body: "{\"name\":\"test\"}", headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Content-Type'=>'application/json; charset=UTF-8', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 201, body: "{\"id\":1,\"name\":\"test\"}", headers: {})
+
+    response = EdoolsSdk::Course.create("name" => "test")
+
+    assert_equal response.id, 1
+    assert_equal response.name, "test"
+  end
+
+  def test_create!
+    stub_request(:post, "https://core.myedools.info/api/courses").
+      with(body: "{\"name\":\"test\"}", headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Content-Type'=>'application/json; charset=UTF-8', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 201, body: "{\"id\":1,\"name\":\"test\"}", headers: {})
+
+    response = EdoolsSdk::Course.create!("name" => "test")
+
+    assert_equal response.id, 1
+    assert_equal response.name, "test"
+  end
+
+  def test_save
+    stub_request(:post, "https://core.myedools.info/api/courses").
+      with(body: "{\"id\":null,\"name\":\"test\",\"description\":null,\"image_url\":null,\"duration\":null,\"ready\":null,\"path_ids\":null,\"forum_section_ids\":null,\"linear_requirements\":null,\"library_resource\":null,\"created_at\":null,\"updated_at\":null}", headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Content-Type'=>'application/json; charset=UTF-8', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 201, body: "{\"id\":1,\"name\":\"test\"}", headers: {})
+
+    course = EdoolsSdk::Course.new
+    course.name = "test"
+
+    response = course.save
+
+    assert_equal response.id, 1
+    assert_equal response.name, "test"
+  end
+
+  def test_save!
+    stub_request(:post, "https://core.myedools.info/api/courses").
+      with(body: "{\"id\":null,\"name\":\"test\",\"description\":null,\"image_url\":null,\"duration\":null,\"ready\":null,\"path_ids\":null,\"forum_section_ids\":null,\"linear_requirements\":null,\"library_resource\":null,\"created_at\":null,\"updated_at\":null}", headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Content-Type'=>'application/json; charset=UTF-8', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 201, body: "{\"id\":1,\"name\":\"test\"}", headers: {})
+
+    course = EdoolsSdk::Course.new
+    course.name = "test"
+
+    response = course.save!
+
+    assert_equal response.id, 1
+    assert_equal response.name, "test"
   end
 end
