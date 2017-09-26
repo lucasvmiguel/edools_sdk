@@ -17,8 +17,6 @@ You can set an enviroment variable called 'edools_token', or create a file 'conf
 token: 'some_token'
 ```
 
-You need set an enviroment variable called 'edools_token', with a valid token, to work correctly with the edools platform!!!
-
 ```ruby
 require 'edools_sdk'
 
