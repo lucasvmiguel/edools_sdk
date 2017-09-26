@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'edools_sdk'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.date        = '2017-10-25'
   s.summary     = "SDK for edools platform."
   s.description = "A simple sdk to access edools platform."
