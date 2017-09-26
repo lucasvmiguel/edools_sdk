@@ -23,6 +23,9 @@ require 'edools_sdk'
 EdoolsSdk::Course.all()
 ```
 
+Be careful with config cache in your ruby on rails application, sometimes 'edools.yml' is wrong because of that 
+Click [here](https://stackoverflow.com/questions/29289833/environment-variables-cached-in-rails-config) to fix this bug
+
 ## Documentation
 
 [here](http://www.rubydoc.info/gems/edools_sdk)
