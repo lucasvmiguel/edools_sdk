@@ -16,7 +16,7 @@ You can set an enviroment variable called 'edools_token', or create a file 'conf
 ```yml
 token: 'some_token'
 ```
-
+and then
 ```ruby
 require 'edools_sdk'
 
