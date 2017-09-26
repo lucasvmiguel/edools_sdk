@@ -5,8 +5,9 @@ This project is a SDK to Edools platform.
 
 ## Install
 
+In your Gemfile:
 ```ruby
-gem 'edools_sdk', git: 'https://github.com/lucasvmiguel/edools_sdk.git'
+gem 'edools_sdk'
 ```
 
 ## Getting start 
