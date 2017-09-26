@@ -25,7 +25,7 @@ EdoolsSdk::Course.all()
 
 ## Documentation
 
-[here](https://lucasvmiguel.github.io/)
+[here](http://www.rubydoc.info/gems/edools_sdk)
 
 ## License
 
