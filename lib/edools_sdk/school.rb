@@ -1,8 +1,6 @@
-require "http"
-
 module EdoolsSdk
   # School class
-  class School
+  class School < EdoolsBase
     attr_accessor(
       :id,
       :credentials,
@@ -85,13 +83,6 @@ module EdoolsSdk
       @updated_at = nil
     end
 
-    # Parse School object to Hash
-    def to_h
-      hash = {}
-      instance_variables.each {|var| hash[var.to_s.delete("@")] = instance_variable_get(var) }
-      hash
-    end
-
     # Parse json to School object
     def self.parse_json(props)
       school = School.new
@@ -156,7 +147,7 @@ module EdoolsSdk
     #
     # Example:
     #   >> School.create!(token, "name" => "test")
-    #   => 
+    #   => #<EdoolsSdk::School:0x0000000234d350 @id=nil, @credentials=nil, @name="test", @password=nil, @subdomain=nil, @domains=nil, @rdstation_token=nil, @adroll_adv_id=nil, @adroll_pix_id=nil, @email=nil, @phone=nil, @cnpj=nil, @samba_key=nil, @samba_player_key=nil, @samba_access_token=nil, @samba_project_id=nil, @terms_of_use=nil, @facebook=nil, @twitter=nil, @linkedin=nil, @pinterest=nil, @google_plus=nil, @youtube=nil, @instagram=nil, @site=nil, @address=nil, @company_name=nil, @seo_title=nil, @seo_description=nil, @logo=nil, @metadata=nil, @meta_available_locales=nil, @event=nil, @created_at=nil, @updated_at=nil>
     def self.create!(token, props)
       response = HTTP
         .headers('Authorization' => "Token token=\"#{token}\"")
@@ -174,7 +165,7 @@ module EdoolsSdk
     #
     # Example:
     #   >> School.create(token, "name" => "test")
-    #   => 
+    #   => #<EdoolsSdk::School:0x0000000234d350 @id=nil, @credentials=nil, @name="test", @password=nil, @subdomain=nil, @domains=nil, @rdstation_token=nil, @adroll_adv_id=nil, @adroll_pix_id=nil, @email=nil, @phone=nil, @cnpj=nil, @samba_key=nil, @samba_player_key=nil, @samba_access_token=nil, @samba_project_id=nil, @terms_of_use=nil, @facebook=nil, @twitter=nil, @linkedin=nil, @pinterest=nil, @google_plus=nil, @youtube=nil, @instagram=nil, @site=nil, @address=nil, @company_name=nil, @seo_title=nil, @seo_description=nil, @logo=nil, @metadata=nil, @meta_available_locales=nil, @event=nil, @created_at=nil, @updated_at=nil>
     def self.create(token, props)
       response = HTTP
         .headers('Authorization' => "Token token=\"#{token}\"")

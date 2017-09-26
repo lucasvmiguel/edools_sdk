@@ -58,7 +58,7 @@
   <h3>Parent</h3>
 
   
-  <p class="link">Object
+  <p class="link">EdoolsBase
   
 </div>
 
@@ -85,8 +85,6 @@
     <li ><a href="#method-i-save">#save</a>
     
     <li ><a href="#method-i-save-21">#save!</a>
-    
-    <li ><a href="#method-i-to_h">#to_h</a>
     
   </ul>
 </div>
@@ -326,7 +324,7 @@
 
           
           <div class="method-source-code" id="all-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 92</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 83</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all</span>
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{ENV[&#39;edools_token&#39;]}\&quot;&quot;</span>)
@@ -372,7 +370,7 @@
 
           
           <div class="method-source-code" id="all-21-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 75</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all!</span>
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{ENV[&#39;edools_token&#39;]}\&quot;&quot;</span>)
@@ -418,7 +416,7 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 168</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 159</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">props</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{ENV[&#39;edools_token&#39;]}\&quot;&quot;</span>)
@@ -464,7 +462,7 @@
 
           
           <div class="method-source-code" id="create-21-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 151</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 142</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create!</span>(<span class="ruby-identifier">props</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{ENV[&#39;edools_token&#39;]}\&quot;&quot;</span>)
@@ -505,7 +503,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 24</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
   <span class="ruby-ivar">@id</span> = <span class="ruby-keyword">nil</span>
   <span class="ruby-ivar">@name</span> = <span class="ruby-keyword">nil</span>
@@ -549,7 +547,7 @@
 
           
           <div class="method-source-code" id="parse_json-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 47</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse_json</span>(<span class="ruby-identifier">props</span>)
   <span class="ruby-identifier">course</span> = <span class="ruby-constant">Course</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-identifier">course</span>.<span class="ruby-identifier">id</span> = <span class="ruby-identifier">props</span>[<span class="ruby-string">&#39;id&#39;</span>]
@@ -614,7 +612,7 @@
 
           
           <div class="method-source-code" id="save-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 130</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 121</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">save</span>
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{ENV[&#39;edools_token&#39;]}\&quot;&quot;</span>)
@@ -664,7 +662,7 @@
 
           
           <div class="method-source-code" id="save-21-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 109</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 100</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">save!</span>
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{ENV[&#39;edools_token&#39;]}\&quot;&quot;</span>)
@@ -679,41 +677,6 @@
   <span class="ruby-identifier">change_values</span>(<span class="ruby-identifier">course_saved</span>)
 
   <span class="ruby-identifier">course_saved</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-to_h" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_h</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Parse <a href="Course.html">Course</a> object to Hash</p>
-          
-          
-
-          
-          <div class="method-source-code" id="to_h-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/course.rb, line 40</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_h</span>
-  <span class="ruby-identifier">hash</span> = {}
-  <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">var</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;@&quot;</span>)] = <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">var</span>) }
-  <span class="ruby-identifier">hash</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           

@@ -58,7 +58,7 @@
   <h3>Parent</h3>
 
   
-  <p class="link">Object
+  <p class="link"><a href="EdoolsBase.html">EdoolsSdk::EdoolsBase</a>
   
 </div>
 
@@ -83,8 +83,6 @@
     <li ><a href="#method-c-update_by_id">::update_by_id</a>
     
     <li ><a href="#method-c-update_by_id-21">::update_by_id!</a>
-    
-    <li ><a href="#method-i-to_h">#to_h</a>
     
   </ul>
 </div>
@@ -623,13 +621,13 @@ after create</p>
 <p>Example:</p>
 
 <pre>&gt;&gt; School.create(token, &quot;name&quot; =&gt; &quot;test&quot;)
-=&gt;</pre>
+=&gt; #&lt;EdoolsSdk::School:0x0000000234d350 @id=nil, @credentials=nil, @name=&quot;test&quot;, @password=nil, @subdomain=nil, @domains=nil, @rdstation_token=nil, @adroll_adv_id=nil, @adroll_pix_id=nil, @email=nil, @phone=nil, @cnpj=nil, @samba_key=nil, @samba_player_key=nil, @samba_access_token=nil, @samba_project_id=nil, @terms_of_use=nil, @facebook=nil, @twitter=nil, @linkedin=nil, @pinterest=nil, @google_plus=nil, @youtube=nil, @instagram=nil, @site=nil, @address=nil, @company_name=nil, @seo_title=nil, @seo_description=nil, @logo=nil, @metadata=nil, @meta_available_locales=nil, @event=nil, @created_at=nil, @updated_at=nil&gt;</pre>
           
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 178</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 169</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">token</span>, <span class="ruby-identifier">props</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{token}\&quot;&quot;</span>)
@@ -670,13 +668,13 @@ exception will be raised Just id and name are populated after create</p>
 <p>Example:</p>
 
 <pre>&gt;&gt; School.create!(token, &quot;name&quot; =&gt; &quot;test&quot;)
-=&gt;</pre>
+=&gt; #&lt;EdoolsSdk::School:0x0000000234d350 @id=nil, @credentials=nil, @name=&quot;test&quot;, @password=nil, @subdomain=nil, @domains=nil, @rdstation_token=nil, @adroll_adv_id=nil, @adroll_pix_id=nil, @email=nil, @phone=nil, @cnpj=nil, @samba_key=nil, @samba_player_key=nil, @samba_access_token=nil, @samba_project_id=nil, @terms_of_use=nil, @facebook=nil, @twitter=nil, @linkedin=nil, @pinterest=nil, @google_plus=nil, @youtube=nil, @instagram=nil, @site=nil, @address=nil, @company_name=nil, @seo_title=nil, @seo_description=nil, @logo=nil, @metadata=nil, @meta_available_locales=nil, @event=nil, @created_at=nil, @updated_at=nil&gt;</pre>
           
           
 
           
           <div class="method-source-code" id="create-21-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 160</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 151</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create!</span>(<span class="ruby-identifier">token</span>, <span class="ruby-identifier">props</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{token}\&quot;&quot;</span>)
@@ -717,7 +715,7 @@ exception will be raised Just id and name are populated after create</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 48</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
   <span class="ruby-ivar">@id</span> = <span class="ruby-keyword">nil</span>
   <span class="ruby-ivar">@credentials</span> = <span class="ruby-keyword">nil</span>
@@ -786,7 +784,7 @@ exception will be raised Just id and name are populated after create</p>
 
           
           <div class="method-source-code" id="parse_json-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 96</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 87</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse_json</span>(<span class="ruby-identifier">props</span>)
   <span class="ruby-identifier">school</span> = <span class="ruby-constant">School</span>.<span class="ruby-identifier">new</span>
 
@@ -863,7 +861,7 @@ exception will be raised Just id and name are populated after create</p>
 
           
           <div class="method-source-code" id="parse_json_created-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 145</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse_json_created</span>(<span class="ruby-identifier">props</span>)
   <span class="ruby-identifier">school</span> = <span class="ruby-constant">School</span>.<span class="ruby-identifier">new</span>
 
@@ -906,7 +904,7 @@ exception will be raised Just id and name are populated after create</p>
 
           
           <div class="method-source-code" id="update_by_id-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 195</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 186</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">update_by_id</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">props</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{ENV[&#39;edools_token&#39;]}\&quot;&quot;</span>)
@@ -951,7 +949,7 @@ exception will be raised</p>
 
           
           <div class="method-source-code" id="update_by_id-21-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 210</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 201</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">update_by_id!</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">props</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{ENV[&#39;edools_token&#39;]}\&quot;&quot;</span>)
@@ -960,49 +958,6 @@ exception will be raised</p>
   <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;invalid status code #{response.status}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">!=</span> <span class="ruby-value">204</span>
 
   <span class="ruby-constant">School</span>.<span class="ruby-identifier">parse_json</span>(<span class="ruby-identifier">props</span>)
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-    </section>
-  
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
-       <header>
-         <h3>Public Instance Methods</h3>
-       </header>
-
-    
-      <div id="method-i-to_h" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">to_h</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Parse <a href="School.html">School</a> object to Hash</p>
-          
-          
-
-          
-          <div class="method-source-code" id="to_h-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/school.rb, line 89</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_h</span>
-  <span class="ruby-identifier">hash</span> = {}
-  <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">var</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;@&quot;</span>)] = <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">var</span>) }
-  <span class="ruby-identifier">hash</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           

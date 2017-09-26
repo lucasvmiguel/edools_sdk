@@ -22,59 +22,20 @@
 <main role="main">
 <h1 class="class">Table of Contents - RDoc Documentation</h1>
 
-<h2 id="pages">Pages</h2>
-<ul>
-  <li class="file">
-    <a href="Gemfile.html">Gemfile</a>
-  </li>
-    <li class="file">
-    <a href="Gemfile_lock.html">Gemfile.lock</a>
-  </li>
-    <li class="file">
-    <a href="LICENSE.html">LICENSE</a>
-  </li>
-    <li class="file">
-    <a href="README_md.html">README</a>
-
-    <ul>
-      <li><a href="README_md.html#label-EdoolsSdk">EdoolsSdk</a>
-      <li><a href="README_md.html#label-Install">Install</a>
-      <li><a href="README_md.html#label-Getting+start">Getting start</a>
-      <li><a href="README_md.html#label-Documentation">Documentation</a>
-      <li><a href="README_md.html#label-License">License</a>
-    </ul>
-  </li>
-    <li class="file">
-    <a href="Rakefile.html">Rakefile</a>
-  </li>
-    <li class="file">
-    <a href="edools_sdk_gemspec.html">edools_sdk.gemspec</a>
-  </li>
-    <li class="file">
-    <a href="important.html">important</a>
-  </li>
-    <li class="file">
-    <a href="test/mocks/courses_response_json.html">courses_response.json</a>
-  </li>
-    <li class="file">
-    <a href="test/mocks/products_response_json.html">products_response.json</a>
-  </li>
-    <li class="file">
-    <a href="test/mocks/school_created_response_json.html">school_created_response.json</a>
-  </li>
-  
-</ul>
 
 <h2 id="classes">Classes and Modules</h2>
 <ul>
-  <li class="class">
-    <a href="CourseTest.html">CourseTest</a>
-  </li>
   <li class="module">
     <a href="EdoolsSdk.html">EdoolsSdk</a>
   </li>
   <li class="class">
     <a href="EdoolsSdk/Course.html">EdoolsSdk::Course</a>
+  </li>
+  <li class="class">
+    <a href="EdoolsSdk/EdoolsBase.html">EdoolsSdk::EdoolsBase</a>
+  </li>
+  <li class="class">
+    <a href="EdoolsSdk/Invitation.html">EdoolsSdk::Invitation</a>
   </li>
   <li class="class">
     <a href="EdoolsSdk/Product.html">EdoolsSdk::Product</a>
@@ -83,10 +44,7 @@
     <a href="EdoolsSdk/School.html">EdoolsSdk::School</a>
   </li>
   <li class="class">
-    <a href="ProductTest.html">ProductTest</a>
-  </li>
-  <li class="class">
-    <a href="SchoolTest.html">SchoolTest</a>
+    <a href="EdoolsSdk/Student.html">EdoolsSdk::Student</a>
   </li>
 </ul>
 
@@ -104,6 +62,11 @@
     <span class="container">EdoolsSdk::Product</span>
 
   <li class="method">
+    <a href="EdoolsSdk/Student.html#method-c-all">::all</a>
+    &mdash;
+    <span class="container">EdoolsSdk::Student</span>
+
+  <li class="method">
     <a href="EdoolsSdk/Course.html#method-c-all-21">::all!</a>
     &mdash;
     <span class="container">EdoolsSdk::Course</span>
@@ -112,6 +75,21 @@
     <a href="EdoolsSdk/Product.html#method-c-all-21">::all!</a>
     &mdash;
     <span class="container">EdoolsSdk::Product</span>
+
+  <li class="method">
+    <a href="EdoolsSdk/Student.html#method-c-all-21">::all!</a>
+    &mdash;
+    <span class="container">EdoolsSdk::Student</span>
+
+  <li class="method">
+    <a href="EdoolsSdk/Student.html#method-c-all_by_product_id">::all_by_product_id</a>
+    &mdash;
+    <span class="container">EdoolsSdk::Student</span>
+
+  <li class="method">
+    <a href="EdoolsSdk/Student.html#method-c-all_by_product_id-21">::all_by_product_id!</a>
+    &mdash;
+    <span class="container">EdoolsSdk::Student</span>
 
   <li class="method">
     <a href="EdoolsSdk/Course.html#method-c-create">::create</a>
@@ -164,6 +142,11 @@
     <span class="container">EdoolsSdk::Course</span>
 
   <li class="method">
+    <a href="EdoolsSdk/Invitation.html#method-c-parse_json">::parse_json</a>
+    &mdash;
+    <span class="container">EdoolsSdk::Invitation</span>
+
+  <li class="method">
     <a href="EdoolsSdk/Product.html#method-c-parse_json">::parse_json</a>
     &mdash;
     <span class="container">EdoolsSdk::Product</span>
@@ -172,6 +155,11 @@
     <a href="EdoolsSdk/School.html#method-c-parse_json">::parse_json</a>
     &mdash;
     <span class="container">EdoolsSdk::School</span>
+
+  <li class="method">
+    <a href="EdoolsSdk/Student.html#method-c-parse_json">::parse_json</a>
+    &mdash;
+    <span class="container">EdoolsSdk::Student</span>
 
   <li class="method">
     <a href="EdoolsSdk/School.html#method-c-parse_json_created">::parse_json_created</a>
@@ -209,129 +197,14 @@
     <span class="container">EdoolsSdk::Product</span>
 
   <li class="method">
-    <a href="CourseTest.html#method-i-test_all">#test_all</a>
+    <a href="EdoolsSdk/Student.html#method-i-self_invite-21">#self_invite!</a>
     &mdash;
-    <span class="container">CourseTest</span>
+    <span class="container">EdoolsSdk::Student</span>
 
   <li class="method">
-    <a href="ProductTest.html#method-i-test_all">#test_all</a>
+    <a href="EdoolsSdk/EdoolsBase.html#method-i-to_h">#to_h</a>
     &mdash;
-    <span class="container">ProductTest</span>
-
-  <li class="method">
-    <a href="CourseTest.html#method-i-test_all-21">#test_all!</a>
-    &mdash;
-    <span class="container">CourseTest</span>
-
-  <li class="method">
-    <a href="ProductTest.html#method-i-test_all-21">#test_all!</a>
-    &mdash;
-    <span class="container">ProductTest</span>
-
-  <li class="method">
-    <a href="CourseTest.html#method-i-test_create">#test_create</a>
-    &mdash;
-    <span class="container">CourseTest</span>
-
-  <li class="method">
-    <a href="ProductTest.html#method-i-test_create">#test_create</a>
-    &mdash;
-    <span class="container">ProductTest</span>
-
-  <li class="method">
-    <a href="SchoolTest.html#method-i-test_create">#test_create</a>
-    &mdash;
-    <span class="container">SchoolTest</span>
-
-  <li class="method">
-    <a href="CourseTest.html#method-i-test_create-21">#test_create!</a>
-    &mdash;
-    <span class="container">CourseTest</span>
-
-  <li class="method">
-    <a href="ProductTest.html#method-i-test_create-21">#test_create!</a>
-    &mdash;
-    <span class="container">ProductTest</span>
-
-  <li class="method">
-    <a href="SchoolTest.html#method-i-test_create-21">#test_create!</a>
-    &mdash;
-    <span class="container">SchoolTest</span>
-
-  <li class="method">
-    <a href="CourseTest.html#method-i-test_initialize">#test_initialize</a>
-    &mdash;
-    <span class="container">CourseTest</span>
-
-  <li class="method">
-    <a href="ProductTest.html#method-i-test_initialize">#test_initialize</a>
-    &mdash;
-    <span class="container">ProductTest</span>
-
-  <li class="method">
-    <a href="CourseTest.html#method-i-test_parse_json">#test_parse_json</a>
-    &mdash;
-    <span class="container">CourseTest</span>
-
-  <li class="method">
-    <a href="ProductTest.html#method-i-test_parse_json">#test_parse_json</a>
-    &mdash;
-    <span class="container">ProductTest</span>
-
-  <li class="method">
-    <a href="CourseTest.html#method-i-test_save">#test_save</a>
-    &mdash;
-    <span class="container">CourseTest</span>
-
-  <li class="method">
-    <a href="ProductTest.html#method-i-test_save">#test_save</a>
-    &mdash;
-    <span class="container">ProductTest</span>
-
-  <li class="method">
-    <a href="CourseTest.html#method-i-test_save-21">#test_save!</a>
-    &mdash;
-    <span class="container">CourseTest</span>
-
-  <li class="method">
-    <a href="ProductTest.html#method-i-test_save-21">#test_save!</a>
-    &mdash;
-    <span class="container">ProductTest</span>
-
-  <li class="method">
-    <a href="CourseTest.html#method-i-test_to_h">#test_to_h</a>
-    &mdash;
-    <span class="container">CourseTest</span>
-
-  <li class="method">
-    <a href="ProductTest.html#method-i-test_to_h">#test_to_h</a>
-    &mdash;
-    <span class="container">ProductTest</span>
-
-  <li class="method">
-    <a href="SchoolTest.html#method-i-test_update_by_id">#test_update_by_id</a>
-    &mdash;
-    <span class="container">SchoolTest</span>
-
-  <li class="method">
-    <a href="SchoolTest.html#method-i-test_update_by_id-21">#test_update_by_id!</a>
-    &mdash;
-    <span class="container">SchoolTest</span>
-
-  <li class="method">
-    <a href="EdoolsSdk/Course.html#method-i-to_h">#to_h</a>
-    &mdash;
-    <span class="container">EdoolsSdk::Course</span>
-
-  <li class="method">
-    <a href="EdoolsSdk/Product.html#method-i-to_h">#to_h</a>
-    &mdash;
-    <span class="container">EdoolsSdk::Product</span>
-
-  <li class="method">
-    <a href="EdoolsSdk/School.html#method-i-to_h">#to_h</a>
-    &mdash;
-    <span class="container">EdoolsSdk::School</span>
+    <span class="container">EdoolsSdk::EdoolsBase</span>
 </ul>
 </main>
 

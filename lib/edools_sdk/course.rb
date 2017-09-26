@@ -1,8 +1,6 @@
-require "http"
-
 module EdoolsSdk
   # Course class
-  class Course
+  class Course < EdoolsBase
     attr_accessor(
       :id, 
       :name, 
@@ -34,13 +32,6 @@ module EdoolsSdk
       @library_resource = nil
       @created_at = nil
       @updated_at = nil
-    end
-
-    # Parse Course object to Hash
-    def to_h
-      hash = {}
-      instance_variables.each {|var| hash[var.to_s.delete("@")] = instance_variable_get(var) }
-      hash
     end
 
     # Parse json to Course object

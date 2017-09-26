@@ -1,8 +1,6 @@
-require "http"
-
 module EdoolsSdk
   # Product class
-  class Product
+  class Product < EdoolsBase
     attr_accessor(
       :id,
       :title,
@@ -71,13 +69,6 @@ module EdoolsSdk
       @gallery_media_ids = nil
       @created_at = nil
       @updated_at = nil
-    end
-
-    # Parse Product object to Hash
-    def to_h
-      hash = {}
-      instance_variables.each {|var| hash[var.to_s.delete("@")] = instance_variable_get(var) }
-      hash
     end
 
     # Parse json to Product object
