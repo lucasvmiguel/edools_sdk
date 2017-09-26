@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
-# gem "rake"
 gem "http"
 gem "webmock"
+gem "rake"
+gem "minitest"
