@@ -1,6 +1,6 @@
-Tue, 26 Sep 2017 11:53:36 -0300
-lib/edools_sdk.rb	Tue, 26 Sep 2017 11:44:43 -0300
-lib/edools_sdk/student.rb	Tue, 26 Sep 2017 11:40:29 -0300
+Tue, 26 Sep 2017 13:35:51 -0300
+lib/edools_sdk.rb	Tue, 26 Sep 2017 13:30:38 -0300
+lib/edools_sdk/student.rb	Tue, 26 Sep 2017 13:30:27 -0300
 lib/edools_sdk/school.rb	Tue, 26 Sep 2017 11:44:05 -0300
 lib/edools_sdk/product.rb	Tue, 26 Sep 2017 11:40:18 -0300
 lib/edools_sdk/invitation.rb	Tue, 26 Sep 2017 11:40:09 -0300

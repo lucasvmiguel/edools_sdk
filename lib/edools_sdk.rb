@@ -12,5 +12,5 @@ if ENV['edools_token'].nil? && file_exists
   config = YAML.load_file('config/edools.yml')
   ENV['edools_token'] = config['token']
 elsif ENV['edools_token'].nil? && !file_exists
-  puts "WARNING: edools token not configurated"
+  puts "WARNING: edools token not configurated!"
 end

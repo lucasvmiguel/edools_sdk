@@ -91,7 +91,7 @@ class StudentTest < Minitest::Test
     assert_equal response.first.email, "test@test.com"
   end
 
-  def test_self_invite
+  def test_self_invite!
     stub_request(:post, "https://core.myedools.info/api/invitations").
       with(body: "{\"first_name\":\"test\",\"last_name\":\"test\",\"email\":\"test@test\",\"password\":\"123456\",\"confirm_password\":\"123456\"}", headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
       to_return(status: 200, body: File.open("#{Dir.pwd}/test/mocks/invitation_response.json", 'rb'), headers: {})
@@ -103,6 +103,23 @@ class StudentTest < Minitest::Test
     student.email = 'test@test'
 
     response = student.self_invite!('123456', '123456')
+
+    assert_equal response.id, 588415
+    assert_equal response.email, "test@live.com"
+  end
+
+  def test_self_invite
+    stub_request(:post, "https://core.myedools.info/api/invitations").
+      with(body: "{\"first_name\":\"test\",\"last_name\":\"test\",\"email\":\"test@test\",\"password\":\"123456\",\"confirm_password\":\"123456\"}", headers: {'Authorization'=>'Token token="token_example"', 'Connection'=>'close', 'Host'=>'core.myedools.info', 'User-Agent'=>'http.rb/2.2.2'}).
+      to_return(status: 200, body: File.open("#{Dir.pwd}/test/mocks/invitation_response.json", 'rb'), headers: {})
+
+    student = EdoolsSdk::Student.new
+    student.id = 588417
+    student.first_name = 'test'
+    student.last_name = 'test'
+    student.email = 'test@test'
+
+    response = student.self_invite('123456', '123456')
 
     assert_equal response.id, 588415
     assert_equal response.email, "test@live.com"

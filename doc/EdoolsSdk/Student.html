@@ -80,6 +80,8 @@
     
     <li ><a href="#method-c-parse_json">::parse_json</a>
     
+    <li ><a href="#method-i-self_invite">#self_invite</a>
+    
     <li ><a href="#method-i-self_invite-21">#self_invite!</a>
     
   </ul>
@@ -588,6 +590,58 @@ wrong an exception will be raised</p>
        </header>
 
     
+      <div id="method-i-self_invite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">self_invite</span><span
+            class="method-args">(password, confirm_password)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Self invite <a href="Student.html">Student</a></p>
+
+<p>Example:</p>
+
+<pre>&gt;&gt; Student.self_invite
+=&gt; #&lt;EdoolsSdk::Invitation&gt;</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="self_invite-source">
+            <pre><span class="ruby-comment"># File lib/edools_sdk/student.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">self_invite</span>(<span class="ruby-identifier">password</span>, <span class="ruby-identifier">confirm_password</span>)
+  <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
+    .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{ENV[&#39;edools_token&#39;]}\&quot;&quot;</span>)
+    .<span class="ruby-identifier">post</span>(<span class="ruby-constant">INVITATION_URL</span>, <span class="ruby-value">:json</span> =<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-string">&#39;first_name&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@first_name</span>, 
+      <span class="ruby-string">&#39;last_name&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@last_name</span>, 
+      <span class="ruby-string">&#39;email&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@email</span>,
+      <span class="ruby-string">&#39;password&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">password</span>,
+      <span class="ruby-string">&#39;confirm_password&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">confirm_password</span>,
+    })
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">response</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">400</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">600</span>
+
+  <span class="ruby-identifier">body</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-value">:json</span>)
+
+  <span class="ruby-constant">Invitation</span>.<span class="ruby-identifier">parse_json</span>(<span class="ruby-identifier">body</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
       <div id="method-i-self_invite-21" class="method-detail ">
         
         <div class="method-heading">
@@ -601,13 +655,19 @@ wrong an exception will be raised</p>
 
         <div class="method-description">
           
-          
+          <p>Self invite <a href="Student.html">Student</a>, if anything goes wrong an
+exception will be raised</p>
+
+<p>Example:</p>
+
+<pre>&gt;&gt; Student.self_invite!
+=&gt; #&lt;EdoolsSdk::Invitation&gt;</pre>
           
           
 
           
           <div class="method-source-code" id="self_invite-21-source">
-            <pre><span class="ruby-comment"># File lib/edools_sdk/student.rb, line 121</span>
+            <pre><span class="ruby-comment"># File lib/edools_sdk/student.rb, line 126</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">self_invite!</span>(<span class="ruby-identifier">password</span>, <span class="ruby-identifier">confirm_password</span>)
   <span class="ruby-identifier">response</span> = <span class="ruby-constant">HTTP</span>
     .<span class="ruby-identifier">headers</span>(<span class="ruby-string">&#39;Authorization&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Token token=\&quot;#{ENV[&#39;edools_token&#39;]}\&quot;&quot;</span>)

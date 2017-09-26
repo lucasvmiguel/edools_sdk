@@ -118,6 +118,11 @@ module EdoolsSdk
       body['students'].map { |c| Student.parse_json(c) }
     end
 
+    # Self invite Student, if anything goes wrong an exception will be raised
+    #
+    # Example:
+    #   >> Student.self_invite!
+    #   => #<EdoolsSdk::Invitation>
     def self_invite!(password, confirm_password)
       response = HTTP
         .headers('Authorization' => "Token token=\"#{ENV['edools_token']}\"")
@@ -130,6 +135,29 @@ module EdoolsSdk
         })
 
       raise "invalid status code #{response.status}" if response.status >= 400 && response.status < 600
+
+      body = response.parse(:json)
+
+      Invitation.parse_json(body)
+    end
+
+    # Self invite Student
+    #
+    # Example:
+    #   >> Student.self_invite
+    #   => #<EdoolsSdk::Invitation>
+    def self_invite(password, confirm_password)
+      response = HTTP
+        .headers('Authorization' => "Token token=\"#{ENV['edools_token']}\"")
+        .post(INVITATION_URL, :json => {
+          'first_name' => @first_name, 
+          'last_name' => @last_name, 
+          'email' => @email,
+          'password' => password,
+          'confirm_password' => confirm_password,
+        })
+
+      return response if response.status >= 400 && response.status < 600
 
       body = response.parse(:json)
 
